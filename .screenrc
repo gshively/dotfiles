@@ -1,0 +1,7 @@
+escape ^Zz
+startup_message off
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{G}%Y-%m-%d %C %a%{g}]'
+
+# default screens
+#screen 1 
