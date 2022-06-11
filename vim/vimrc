@@ -1,0 +1,72 @@
+set nocompatible
+
+set number
+set relativenumber
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set autowriteall
+set scrolloff=10
+
+set incsearch
+set ignorecase smartcase
+set nohlsearch
+set noshowmatch
+
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+
+set wildmode=longest,list,full
+set wildmenu
+
+set splitbelow
+set splitright
+
+let mapleader = ","
+map '<leader>r' :python3 %
+
+"""""""""""
+" NerdTree
+"
+
+" open nerdtree for open directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" close vim if NERDTree is only window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+map <C-n> :NERDTreeToggle<CR>
+
+"""""""""""
+" vimwiki
+function! ToggleCalendar()
+    execute ":Calendar"
+    if exists("g:calendar_open")
+        if g:calendar_open == 1
+            execute "q"
+            unlet g:calendar_open
+        else
+            g:calendar_open = 1
+        end
+    else
+        let g:calendar_open = 1
+    end
+endfunction
+
+autocmd FileType vimwiki map <C-c> :call ToggleCalendar()<CR>
+autocmd FileType vimwiki map <C-o> :Vimwiki2HTMLBrowse<CR>
+autocmd FileType vimwiki map <leader>d o* <C-R>=strftime("%Y-%m-%d %H:%M")<CR><Esc>
+
+let g:vimwiki_list = [ 
+    \ {'path': '~/vimwiki', 'path_html': '~/vimwiki_html', 'ext': '.wiki', 'syntax': 'default' }
+    \ ]
+
+
+if has('python3')
+    packadd python-mode
+    exec 'source ' . expand('<sfile>:p:h') . '/vim.python'
+endif

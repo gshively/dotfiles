@@ -1,0 +1,6 @@
+set macligatures
+set guifont=MonoLisa
+set cursorline
+
+exec 'source ' . expand('<sfile>:p:h') . '/vimrc'
+

@@ -1,0 +1,18 @@
+[submodule "vim/pack/vendor/start/calendar-vim"]
+	path = vim/pack/vendor/start/calendar-vim
+	url = https://github.com/mattn/calendar-vim
+[submodule "vim/pack/vendor/start/fugitive"]
+	path = vim/pack/vendor/start/fugitive
+	url = https://tpope.io/vim/fugitive.git
+[submodule "vim/pack/vendor/start/vim-sensible"]
+	path = vim/pack/vendor/start/vim-sensible
+	url = http://github.com/tpope/vim-sensible
+[submodule "vim/pack/vendor/start/vimwiki"]
+	path = vim/pack/vendor/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki
+[submodule "vim/pack/vendor/opt/python-mode"]
+	path = vim/pack/vendor/opt/python-mode
+	url = https://github.com/python-mode/python-mode
+[submodule "vim/pack/vendor/start/ctrlp.vim"]
+	path = vim/pack/vendor/start/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git

@@ -1,0 +1,23 @@
+let g:pymode = 1
+let g:pymode_options = 1
+let g:pymode_trim_whitespaces = 1
+let g:pymode_python = 'python3'
+let g:pymode_preview_height = &previewheight
+let g:pymode_preview_position = 'botright'
+let g:pymode_indent = 1
+let g:pymode_motion = 1
+
+
+
+let g:pymode_quickfix_minheight = 3
+let g:pymode_quickfix_maxheight = 6
+
+let g:pymode_rope = 1
+let g:pymode_rope_completion = 1
+let g:pymode_role_completion_bind = '<C-Space>'
+set completeopt=menuone,noinsert
+let g:pymode_rope_complete_on_dot = 1
+
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport_modules = [ 
+    \ 'os', 'shutil', 'datetime', 'json', 'boto3']
